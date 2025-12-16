@@ -31,7 +31,7 @@ function guardarSeleccion(ingredienteElegido) {
     let intentosTexto = document.getElementById("intentos");
     let comentario = document.getElementById("comentario");
 
-    elegidosIngredientes.innerHTML = [...elegidos].join(" "); // con esto mostramos el array elimiando corchetes. 
+    elegidosIngredientes.innerHTML = [...elegidos].join(" "); // con este metodo mostramos el array elimiando corchetes y separandoles con " ". 
     if (receta.get(ingredienteElegido) === "Incorrecto") { // en caso de fallar.
         alert("Te has equivocado");
         elegidos.clear();// en caso de que se confunda borramos todo el set y limpiamos array de elegidos. 
@@ -54,4 +54,15 @@ function guardarSeleccion(ingredienteElegido) {
 
 function pasarSala3(){
     window.location.href = "sala3.html";
+}
+
+function pista(){
+    let ingredientesKey = Array.from(receta.keys());
+    let numeroAleatorio = Math.floor(Math.random() * 8); // para elegir un ingrediente aleatoria
+    let ingredientePista = ingredientesKey.slice(numeroAleatorio,numeroAleatorio+1); // metodo slice para coger una palabra aleatoria de la lista
+    let letraRandom = (ingredientePista[0]).slice(0,1) // devuelve del array con 1 solo elemento la primera letra con slice.
+    pistaTexto.innerHTML += `Uno de los ingredientes empieza por la letra: ${letraRandom} <br> *Puedes haberlo seleccionado previamente...`;
+
+
+
 }
