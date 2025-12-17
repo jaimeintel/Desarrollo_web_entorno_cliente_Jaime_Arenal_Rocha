@@ -48,7 +48,12 @@ function guardarSeleccion(ingredienteElegido) {
     if (elegidos.size === 8) {
 
         comentario.innerHTML += "Felicidades ! Lo has conseguido, puedes ir a la siguiente sala :) <br><br>";
+        comentario.style.color = "green"
         comentario.innerHTML += `<button onclick="pasarSala3()">Siguiente Sala</button>`;
+        let cocido = document.getElementById("cocido");
+        cocido.style.display ="none";
+        let cocido_preparado = document.getElementById("cocido_preparado");
+        cocido_preparado.innerHTML += "<img src='images/cocido_preparado.gif'>";
     }
 }
 
