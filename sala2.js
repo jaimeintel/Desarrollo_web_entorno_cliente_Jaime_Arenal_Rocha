@@ -42,12 +42,12 @@ function guardarSeleccion(ingredienteElegido) {
 
     if (intentos >= 3) {
         comentario.innerHTML = "Te has quedado sin intentos";
-        return;
+        botones.style.display = "none";
 
     }
     if (elegidos.size === 8) {
 
-        comentario.innerHTML += "Felicidaes ! Lo has cosneguido, puedes ir a la siguiente sala :) <br><br>";
+        comentario.innerHTML += "Felicidades ! Lo has conseguido, puedes ir a la siguiente sala :) <br><br>";
         comentario.innerHTML += `<button onclick="pasarSala3()">Siguiente Sala</button>`;
     }
 }
@@ -63,6 +63,7 @@ function pista(){
     let letraRandom = (ingredientePista[0]).slice(0,1) // devuelve del array con 1 solo elemento la primera letra con slice.
     pistaTexto.innerHTML += `Uno de los ingredientes empieza por la letra: ${letraRandom} <br> *Puedes haberlo seleccionado previamente...`;
 
-
+    let botonPista = document.getElementById("pista");
+    botonPista.style.display = "none"
 
 }
