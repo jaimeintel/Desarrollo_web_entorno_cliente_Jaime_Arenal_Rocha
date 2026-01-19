@@ -46,16 +46,26 @@ document.getElementById("puerta1").onclick = function () {
 
   // validamos respuesta y editamos elementos html
   document.getElementById("validar-puerta1").onclick = function () {
-    let respuesta_puerta1 = document.getElementById("respuesta-puerta1").value;
-    output_puerta1.innerHTML += puerta1.compararRespuesta(respuesta_puerta1);
-    if (
-      puerta1.compararRespuesta(respuesta_puerta1) == "Correcto, has acertado"
-    ) {
-      document.getElementById("img1").src = "images/puertaAcertijoAbierta.png";
-      //contador puertas abiertas
-      contador.innerHTML = `Puertas abiertas: ${Puerta.mostrarNumeroPuertasAbiertas()}/3`;
-      comprobarResultado(); // comprobamos si suma 3 
-    }
+    try {
+      // INICIO TRY
+      let respuesta_puerta1 =
+        document.getElementById("respuesta-puerta1").value;
+      if (respuesta_puerta1 === "") {
+        throw "No puedes responder vacío";
+      }
+      output_puerta1.innerHTML += puerta1.compararRespuesta(respuesta_puerta1);
+      if (
+        puerta1.compararRespuesta(respuesta_puerta1) == "Correcto, has acertado"
+      ) {
+        document.getElementById("img1").src =
+          "images/puertaAcertijoAbierta.png";
+        //contador puertas abiertas
+        contador.innerHTML = `Puertas abiertas: ${Puerta.mostrarNumeroPuertasAbiertas()}/3`;
+        comprobarResultado(); // comprobamos si suma 3
+      }
+    } catch (error) {
+      alert(error);
+    } // FIN CATCH
   };
 };
 
@@ -68,16 +78,24 @@ document.getElementById("puerta2").onclick = function () {
 
   // validamos respuesta y editamos elementos html
   document.getElementById("validar-puerta2").onclick = function () {
-    let respuesta_puerta2 = +document.getElementById("respuesta-puerta2").value;
-    output_puerta2.innerHTML += puerta2.compararRespuesta(respuesta_puerta2);
-    if (
-      puerta2.compararRespuesta(respuesta_puerta2) == "Correcto, has acertado"
-    ) {
-      document.getElementById("img2").src =
-        "images/puertaMatematicaAbierta.png";
-      //contador puertas abiertas
-      contador.innerHTML = `Puertas abiertas: ${Puerta.mostrarNumeroPuertasAbiertas()}/3`;
-      comprobarResultado(); // comprobamos si suma 3 
+    try {
+      let respuesta_puerta2 =
+        +document.getElementById("respuesta-puerta2").value;
+      if (respuesta_puerta2 == "") {
+        throw "No puedes responder vacío";
+      }
+      output_puerta2.innerHTML += puerta2.compararRespuesta(respuesta_puerta2);
+      if (
+        puerta2.compararRespuesta(respuesta_puerta2) == "Correcto, has acertado"
+      ) {
+        document.getElementById("img2").src =
+          "images/puertaMatematicaAbierta.png";
+        //contador puertas abiertas
+        contador.innerHTML = `Puertas abiertas: ${Puerta.mostrarNumeroPuertasAbiertas()}/3`;
+        comprobarResultado(); // comprobamos si suma 3
+      }
+    } catch (error) {
+      alert(error);
     }
   };
 };
@@ -91,25 +109,31 @@ document.getElementById("puerta3").onclick = function () {
 
   // validamos respuesta y editamos elementos html
   document.getElementById("validar-puerta3").onclick = function () {
-    let respuesta_puerta3 = document.getElementById("respuesta-puerta3").value;
-    output_puerta3.innerHTML += puerta3.compararRespuesta(respuesta_puerta3);
-    if (
-      puerta3.compararRespuesta(respuesta_puerta3) == "Correcto, has acertado"
-    ) {
-      document.getElementById("img3").src = "images/puertaCulturalAbierta.png";
-      //contador puertas abiertas
-      contador.innerHTML = `Puertas abiertas: ${Puerta.mostrarNumeroPuertasAbiertas()}/3`;
-      comprobarResultado(); // comprobamos si suma 3 
+    try {
+      let respuesta_puerta3 =
+        document.getElementById("respuesta-puerta3").value;
+      if (respuesta_puerta3 == "") {
+        throw "No puedes responder vacío";
+      }
+      output_puerta3.innerHTML += puerta3.compararRespuesta(respuesta_puerta3);
+      if (
+        puerta3.compararRespuesta(respuesta_puerta3) == "Correcto, has acertado"
+      ) {
+        document.getElementById("img3").src =
+          "images/puertaCulturalAbierta.png";
+        //contador puertas abiertas
+        contador.innerHTML = `Puertas abiertas: ${Puerta.mostrarNumeroPuertasAbiertas()}/3`;
+        comprobarResultado(); // comprobamos si suma 3
+      }
+    } catch (error) {
+      alert(error);
     }
   };
 };
 // RESULTADO
 function comprobarResultado() {
   if (Puerta.mostrarNumeroPuertasAbiertas() == 3) {
-
     let resultado = document.getElementById("resultado");
     resultado.innerHTML += "¡ENOHORABUENA, HAS DESBLOQUEADO LAS 3 SALAS !";
   }
 }
-
-
