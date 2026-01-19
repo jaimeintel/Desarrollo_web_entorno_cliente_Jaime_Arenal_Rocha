@@ -1,24 +1,25 @@
 export default class Puerta {
-    static totalPuertasAbiertas = 0; 
-    #estado = "Cerrada";
+  static totalPuertasAbiertas = 0;
+  #estado = "Cerrada";
 
-    constructor (material, color, tipoContraseña){
-        this.material = material;
-        this.color = color;
-        this.tipoContraseña = tipoContraseña;
+  constructor(material, color, tipoContraseña) {
+    this.material = material;
+    this.color = color;
+    this.tipoContraseña = tipoContraseña;
+  }
+
+  abrir() {
+    if (this.estado === "Cerrada") {
+      this.#estado = "Abierta";
+      Puerta.totalPuertasAbiertas++;
     }
+  }
 
-    abrir(){
-        this.#estado = "Abierta";
-        Puerta.totalPuertasAbiertas++;
-    }
+  get estado() {
+    return this.#estado;
+  }
 
-    get estado(){
-        return this.#estado;
-    }
-
-    static mostrarNumeroPuertasAbiertas(){
-        return Puerta.totalPuertasAbiertas;
-    }
-
+  static mostrarNumeroPuertasAbiertas() {
+    return Puerta.totalPuertasAbiertas;
+  }
 }
