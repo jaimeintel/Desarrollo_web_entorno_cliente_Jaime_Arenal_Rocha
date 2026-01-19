@@ -13,10 +13,11 @@ export default class PuertaAcertijo extends Puerta{
     }
     compararRespuesta(respuestaIn){
         if (respuestaIn.toLowerCase() == this.respuesta){
+            this.abrir();// para sumar al contador de puertas abiertas... 
             return "Correcto, has acertado";
         }
         else{
-            return "Respuesta incorrecta, prueba otra vez."
+            return "Respuesta incorrecta, recarga la página para volver a empezar."
         }
     }
 }
