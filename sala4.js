@@ -1,16 +1,25 @@
 const caja = document.getElementById("caja");
 const texto = document.getElementById("datos");
+const info = document.getElementById("info");
+const pista = document.getElementById("pista");
 
-// ancho y alto de caja 
-let anchoCaja = caja.offsetWidth;
-let altoCaja = caja.offsetHeight;
+// funcion para escribir mensajes por patnalla
+function log(texto) {
+  info.innerHTML = texto + "<br>";
+}
+
+// ancho y alto de caja
+let anchoCaja = Math.round(caja.offsetWidth);
+let altoCaja = Math.round(caja.offsetHeight);
+
+console.log(`Ancho caja ${anchoCaja}, Alto caja ${altoCaja}`);
 
 // mousemove para ver la posicion del raton y mostramos por pantalla.
 caja.addEventListener("mousemove", function (e) {
-  let x = e.offsetX;
-  let y = e.offsetY;
+  let x = Math.round(e.offsetX);
+  let y = Math.round(e.offsetY);
 
-  if (x == anchoCaja / 2 && y == altoCaja / 2){
+  if (x == anchoCaja / 2 && y == altoCaja / 2) {
     caja.style.backgroundColor = "green";
   }
 
@@ -24,15 +33,45 @@ caja.addEventListener("mouseenter", () => {
 // click para poder ver donde se hizo click y si coincide con el centro
 caja.addEventListener("click", function (e) {
   // para saber ancho y alto de la caja
-
   let clickX = e.offsetX;
   let clickY = e.offsetY;
 
   if (clickX == anchoCaja / 2 && clickY == altoCaja / 2) {
     caja.style.backgroundColor = "green";
-    alert(`Has pulsado justo en centro de la caja !! felicidades ! `);
+    log(`Has pulsado justo en centro de la caja !! felicidades ! `);
+    info.innerHTML += `<br><button onclick='empezarOtraVez()'>Empezar juego otra vez</button>`;
   } else {
     caja.style.backgroundColor = "red";
-    alert(`NO has pulsado en el centro justo, vuelve a intentarlo... `);
+    log(`NO has pulsado en el centro justo, vuelve a intentarlo... `);
   }
 });
+
+// pista usando stopPropagation
+
+pista.addEventListener("click", function (e) {
+  log("Pista: El centro es 102 x 102");
+
+  e.stopPropagation();
+
+  // Si no estuviese stopPropagation, se ejecutarian todos los addEventlistener
+  // incluido poner la caja en rojo y el mensaje de derrota.
+});
+
+// validicacion de teclado con enter para cambiar de color el cuadrado
+window.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    let colorAleatorio = Math.round(Math.random() * 1000);
+    caja.style.backgroundColor = `rgb(156, ${colorAleatorio}, 227)`;
+    console.log(colorAleatorio);
+    console.log("Has hecho click en enter ! ");
+  }
+// validicacion de teclado con f para quitar el fondo
+  if (e.key.toLowerCase() === "f") {
+    console.log("fodno de gif quitado correctamente");
+    document.body.style.backgroundImage = "none";
+  }
+});
+
+function empezarOtraVez() {
+  window.location.href = "sala1.html";
+}
