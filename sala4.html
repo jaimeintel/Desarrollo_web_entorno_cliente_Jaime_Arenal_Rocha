@@ -7,6 +7,30 @@
     <title>Document</title>
     <script src="sala4.js" type="module" defer></script>
     <style>
+        body {
+            font-family: "Fredoka", sans-serif;
+            font-weight: 400;
+            background-color: #FDFBF0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2%;
+        }
+
+        #contenedor {
+            border: 2px solid #333;
+            padding: 5%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            width: 60%;
+            height: 60%;
+            background-color: white;
+        }
+
         #caja {
             width: 200px;
             height: 200px;
@@ -27,16 +51,17 @@
         <p>
             Bienvenido a la cuarta sala. <br>
             Para poder pasar a la siguiente sala, vas a tener que hacer click en el centro de la caja... <br>
-            Mucha suerte. 
+            Mucha suerte 😈. <br>
         </p>
+
+
+        <div id="caja">
+            Mueve el ratón o haz click <br>
+            Pista: La caja mide 204 * 204
+        </div>
+
+        <p id="datos">Datos: </p>
     </div>
-
-    <div id="caja">
-        Mueve el ratón o haz click 
-    </div>
-
-    <p id="datos">Datos: </p>
-
 </body>
 
 </html>
