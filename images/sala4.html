@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="sala4.js" defer></script>
+    <style>
+        body {
+            font-family: "Fredoka", sans-serif;
+            font-weight: 400;
+            background-color: #FDFBF0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2%;
+            background-image: url('images/fondo.gif');
+            background-size: cover;
+        }
+
+        #contenedor {
+            border: 2px solid #333;
+            padding: 5%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            width: 60%;
+            height: 60%;
+            background-color: white;
+        }
+
+        #caja {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(156, 209, 227);
+            border: 2px solid #000000;
+            border-radius: 2%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        #info{
+            color: rebeccapurple;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenedor">
+        <h1>Sala 4</h1>
+        <p>
+            Bienvenido a la cuarta sala. <br>
+            Para poder pasar a la siguiente sala, vas a tener que hacer click en el centro de la caja... <br>
+            Mucha suerte 😈. <br>
+        </p>
+
+        <p id="info"></p>
+
+
+        <div id="caja">
+            Mueve el ratón o haz click <br><br><br>
+            <button id="pista">PISTA</button>
+        </div>
+
+        <p id="datos">Datos: </p>
+        <p><i>Pista: La caja mide 204 * 204</i></p>
+    </div>
+</body>
+
+</html>
