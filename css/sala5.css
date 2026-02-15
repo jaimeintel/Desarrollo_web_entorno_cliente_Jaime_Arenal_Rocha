@@ -4,42 +4,50 @@
 }
 #armario {
   background-color: white;
-  border-radius: 5%;
+  border-radius: 5px;
   border: 2px solid black;
   width: 150px;
   height: 400px;
+  padding: 2%;
+  gap: 1px;
+  text-align: center;
 }
 #muñeco {
   background-color: white;
-  border-radius: 5%;
+  border-radius: 5px;
   border: 2px solid black;
+  padding: 2%;
+  gap: 1px;
   display: flex;
   flex-direction: column;
   width: 150px;
   height: 400px;
-  background-image: url("../images/muñeco.png");
+  background-image: url("../images/muñeco2.png");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
 }
 .parte-cuerpo {
   background-color: transparent;
-  border-radius: 5%;
-  border: 2px solid rgb(150, 150, 150);
+  border-radius: 5px;
+  border: 2px solid rgb(212, 212, 212);
   width: 150px;
   height: 400px;  
 }
-.parte-cuerpo.sombreada{
-  background-color: aqua;
-  opacity: 0.2;
+.parte-cuerpo.sombreada-mal{
+  background-color: rgb(255, 25, 0, 0.2);
+}
+.parte-cuerpo.sombreada-bien{
+  background-color: rgb(4, 255, 0, 0.2);
 }
 
 .prenda {
-  background-color: white;
-  border-radius: 5%;
+  border-radius: 5px;
   border: 2px solid rgb(150, 150, 150);
-  height: 120px;
+  height: 130px;
 }
 
 #gorra1, #zapatilla1{
-  height: 70px;
+  height: 50px;
 }
