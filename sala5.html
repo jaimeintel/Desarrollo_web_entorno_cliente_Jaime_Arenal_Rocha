@@ -11,37 +11,50 @@
 
 <body>
     <div id="contenedor-sala">
-    <h1>Sala 5</h1>
-    <h2>Viste a tu muñeco con el outfit más molón. </h2>
-    <p><i>Para poder pasar esta sala tendrás que confeccionar un outfit lo suficientemente divertido</i></p>
-    <p><i>Mucha suerte 😊</i></p>
-    <br>
+        <h1>Sala 5</h1>
+        <h2>Viste a tu muñeco con el outfit más molón. </h2>
+        <p><i>Para poder pasar esta sala tendrás que confeccionar un outfit lo suficientemente divertido</i></p>
+        <p><i>Mucha suerte 😊</i></p>
+        <br>
 
-    <div id="contenedor">
-        <div id="armario">
-            <img class="prenda" id="gorra1" src="images/gorra1.png" draggable="true">
-            <img class="prenda" id="sudadera1" src="images/sudadera1.png" draggable="true">
-            <img class="prenda" id="pantalon1" src="images/pantalon1.png" draggable="true">
-            <img class="prenda" id="zapatilla1" src="images/zapatilla1.png" draggable="true">
+        <div id="contenedor">
+            <div id="armario">
+                <img class="prenda" id="gorra1" src="images/gorra1.png" draggable="true">
+                <img class="prenda" id="sudadera1" src="images/sudadera1.png" draggable="true">
+                <img class="prenda" id="pantalon1" src="images/pantalon1.png" draggable="true">
+                <img class="prenda" id="zapatilla1" src="images/zapatilla1.png" draggable="true">
+            </div>
+            <div id="muñeco">
+                <div class="parte-cuerpo" id="cabeza"></div>
+                <div class="parte-cuerpo" id="torso"></div>
+                <div class="parte-cuerpo" id="piernas"></div>
+                <div class="parte-cuerpo" id="pies"></div>
+            </div>
         </div>
-        <div id="muñeco">
-            <div class="parte-cuerpo" id="cabeza"></div>
-            <div class="parte-cuerpo" id="torso"></div>
-            <div class="parte-cuerpo" id="piernas"></div>
-            <div class="parte-cuerpo" id="pies"></div>
+        <img id="muñeco-vestido" src="images/muñeco-vestido.png">
+        <div id="formulario">
+            <h3>¡Recibe el outfit en tu email!</h3>
+            <form id="formulario-envio">
+                <input type="text" id="nombre" placeholder="Nombre y Apellidos" required>
+                <input type="text" id="telefono" placeholder="Teléfono (9 dígitos)" required>
+                <input type="email" id="email" placeholder="Correo electrónico" required>
+                <button type="submit">Enviar Outfit</button>
+            </form>
+            <p id="mensajeError"></p>
         </div>
-    </div>
-    <img  id="muñeco-vestido" src="images/muñeco-vestido.png">
-    <br>
-    <div id="infojuego">
-        <u>información útil Sobre el Juego</u>
-        <ul>
-            <li>Si la ventana de tu navegador no tiene las proporciones adecuadas, puede no visualizarse correctamente el juego correctamente.
-            </li>
-            <li><p id="dimensiones">Redimensiona la ventana del navegador para obtener dimensiones.</p></li>
-            
-        </ul>
-    </div>
+        <br>
+        <div id="infojuego">
+            <u>información útil Sobre el Juego</u>
+            <ul>
+                <li>Si la ventana de tu navegador no tiene las proporciones adecuadas, puede no visualizarse
+                    correctamente el juego correctamente.
+                </li>
+                <li>
+                    <p id="dimensiones">Redimensiona la ventana del navegador para obtener dimensiones.</p>
+                </li>
+
+            </ul>
+        </div>
     </div>
 </body>
 

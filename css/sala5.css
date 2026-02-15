@@ -85,7 +85,22 @@ body {
   background-color: rgb(231, 152, 231);
   border-radius: 5px;
 }
-#muñeco-vestido{
-  height: 450px;
+
+#muñeco-vestido {
+    height: 450px;
+    display: none;
+    animation: rotar 0.5s;
+}
+
+@keyframes rotar {
+    from {
+        transform: scale(0) rotate(-180deg);
+    }
+    to {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+#formulario{
   display: none;
 }

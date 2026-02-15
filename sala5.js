@@ -6,7 +6,7 @@ const parte_cuerpo = document.querySelectorAll(".parte-cuerpo");
 const dimensiones = document.getElementById("dimensiones");
 const contenedor = document.getElementById("contenedor");
 const muñeco_vestido = document.getElementById("muñeco-vestido");
-
+const formulario = document.getElementById("formulario");
 let prendaElegida;
 let prendasCorrectas = 0;
 
@@ -99,6 +99,35 @@ window.addEventListener("resize", actualizarDimensiones); // resize, evento cuan
 function lanzarFormulario() {
   contenedor.style.display = "none";
   muñeco_vestido.style.display = "block"; // esto es lo contrario de none
-
-  
+  formulario.style.display = "block";
 }
+
+// formulario con expresiones regulares
+const formEnvio = document.getElementById("formulario-envio");
+
+function validarFormulario(e) {
+  e.preventDefault(); // evitar que recargue la pag
+
+  const nombre = document.getElementById("nombre").value;
+  const telefono = document.getElementById("telefono").value;
+  const email = document.getElementById("email").value;
+  const mensaje = document.getElementById("mensajeError");
+
+  const reglaNombre = /^[a-zA-Z ]+$/; // minusculas o mayusculas de la a la z y puede haber más de una palabra
+  const reglaTelefono = /^\d{9}$/; // tiene que haber 9 digitos
+  const reglaEmail = /\S+@\S+\.\S+/; // string + @ + string + . + string
+
+  if (reglaNombre.test(nombre) == false) {
+    mensaje.innerText = "El nombre solo puede llevar letras";
+  } else if (reglaTelefono.test(telefono) == false) {
+    mensaje.innerText = "El teléfono debe tener 9 digitos";
+  } else if (reglaEmail.test(email) == false) {
+    mensaje.innerText = "El email no es válido";
+  } else {
+    mensaje.innerText = "Formulario enviado exitosamente !! 📤📤 ";
+    mensaje.innerText += "¡Felicidades, has completado la sala 5! ";
+    
+  }
+}
+
+formEnvio.addEventListener("submit", validarFormulario);
