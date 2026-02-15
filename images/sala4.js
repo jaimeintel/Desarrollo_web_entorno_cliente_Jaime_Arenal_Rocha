@@ -12,7 +12,7 @@ function log(texto) {
 let anchoCaja = Math.round(caja.offsetWidth);
 let altoCaja = Math.round(caja.offsetHeight);
 
-console.log(`Ancho caja ${anchoCaja}, Alto caja ${altoCaja}`)
+console.log(`Ancho caja ${anchoCaja}, Alto caja ${altoCaja}`);
 
 // mousemove para ver la posicion del raton y mostramos por pantalla.
 caja.addEventListener("mousemove", function (e) {
@@ -39,7 +39,7 @@ caja.addEventListener("click", function (e) {
   if (clickX == anchoCaja / 2 && clickY == altoCaja / 2) {
     caja.style.backgroundColor = "green";
     log(`Has pulsado justo en centro de la caja !! felicidades ! `);
-    info.innerHTML += `<br><button onclick='empezarOtraVez()'>Empezar juego otra vez</button>`;
+    info.innerHTML += `<br><button onclick='empezarOtraVez()'>Ir al a sala 5</button>`;
   } else {
     caja.style.backgroundColor = "red";
     log(`NO has pulsado en el centro justo, vuelve a intentarlo... `);
@@ -48,31 +48,30 @@ caja.addEventListener("click", function (e) {
 
 // pista usando stopPropagation
 
-pista.addEventListener("click", function(e) {
-    log("Pista: El centro es 102 x 102");
+pista.addEventListener("click", function (e) {
+  log("Pista: El centro es 102 x 102");
 
-    e.stopPropagation(); 
+  e.stopPropagation();
 
-    // Si no estuviese stopPropagation, se ejecutarian todos los addEventlistener 
-    // incluido poner la caja en rojo y el mensaje de derrota. 
-
+  // Si no estuviese stopPropagation, se ejecutarian todos los addEventlistener
+  // incluido poner la caja en rojo y el mensaje de derrota.
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// validicacion de teclado con enter para cambiar de color el cuadrado
+window.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    let colorAleatorio = Math.round(Math.random() * 1000);
+    caja.style.backgroundColor = `rgb(156, ${colorAleatorio}, 227)`;
+    console.log(colorAleatorio);
+    console.log("Has hecho click en enter ! ");
+  }
+// validicacion de teclado con f para quitar el fondo
+  if (e.key.toLowerCase() === "f") {
+    console.log("fodno de gif quitado correctamente");
+    document.body.style.backgroundImage = "none";
+  }
+});
 
 function empezarOtraVez() {
-    window.location.href = "sala1.html";
+  window.location.href = "sala5.html";
 }
