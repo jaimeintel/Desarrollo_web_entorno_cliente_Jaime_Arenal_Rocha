@@ -1,0 +1,45 @@
+.contenedor {
+  display: flex;
+  gap: 20px;
+}
+#armario {
+  background-color: white;
+  border-radius: 5%;
+  border: 2px solid black;
+  width: 150px;
+  height: 400px;
+}
+#muñeco {
+  background-color: white;
+  border-radius: 5%;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 400px;
+  background-image: url("../images/muñeco.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.parte-cuerpo {
+  background-color: transparent;
+  border-radius: 5%;
+  border: 2px solid rgb(150, 150, 150);
+  width: 150px;
+  height: 400px;  
+}
+.parte-cuerpo.sombreada{
+  background-color: aqua;
+  opacity: 0.2;
+}
+
+.prenda {
+  background-color: white;
+  border-radius: 5%;
+  border: 2px solid rgb(150, 150, 150);
+  height: 120px;
+}
+
+#gorra1, #zapatilla1{
+  height: 70px;
+}
