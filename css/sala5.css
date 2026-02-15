@@ -1,4 +1,28 @@
-.contenedor {
+body {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 400;
+  background-color: #fdfbf0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+}
+
+#contenedor-sala {
+  border: 2px solid #333;
+  padding: 2%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 60%;
+  height: 60%;
+  background-color: white;
+}
+
+#contenedor {
   display: flex;
   gap: 20px;
 }
@@ -33,12 +57,12 @@
   border-radius: 5px;
   border: 2px solid rgb(212, 212, 212);
   width: 150px;
-  height: 400px;  
+  height: 400px;
 }
-.parte-cuerpo.sombreada-mal{
+.parte-cuerpo.sombreada-mal {
   background-color: rgb(255, 25, 0, 0.2);
 }
-.parte-cuerpo.sombreada-bien{
+.parte-cuerpo.sombreada-bien {
   background-color: rgb(4, 255, 0, 0.2);
 }
 
@@ -48,6 +72,20 @@
   height: 130px;
 }
 
-#gorra1, #zapatilla1{
+#gorra1,
+#zapatilla1 {
   height: 50px;
+}
+
+#infojuego {
+  font-weight: 200;
+  border: 2px solid #333;
+  padding: 5%;
+  text-align: left;
+  background-color: rgb(231, 152, 231);
+  border-radius: 5px;
+}
+#muñeco-vestido{
+  height: 450px;
+  display: none;
 }
